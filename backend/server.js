@@ -14,6 +14,10 @@ app.use((req, res, next) => {
         next()
 })
 
+// app.get('/', (req, res) => {
+//         res.send('Hello, world!');
+// });
+
 app.use('/api/mealswipes', mealswipeRoutes)
 app.use('/api/user', userRoutes)
 
