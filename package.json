@@ -22,7 +22,7 @@
     "validator": "^13.9.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "cd frontend && react-scripts start",
     "build": "cd frontend && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
