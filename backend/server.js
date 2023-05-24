@@ -8,6 +8,13 @@ require('dotenv').config()
 
 const app = express();
 
+// if (process.env.NODE_ENV === 'production') {
+//         app.use(express.static(path.join(__dirname, '../build'))); // serve the static react app
+//         app.get(/^\/(?!api).*/, (req, res) => { // don't serve api routes to react app
+//           res.sendFile(path.join(__dirname, '../build', 'index.html'));
+//         });
+// }
+
 app.use(express.json())
 app.use((req, res, next) => {
         console.log(req.path, req.method, req.body)
