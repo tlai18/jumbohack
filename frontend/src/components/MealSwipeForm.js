@@ -1,9 +1,7 @@
 import { useState } from "react"
 import { useMealSwipesContext } from "../hooks/useMealSwipesContext"
-import { useAuthContext } from "../hooks/useAuthContext"
 const MealSwipeForm = () => {
         const { dispatch } = useMealSwipesContext()
-        const { user } = useAuthContext()
 
         const [name, setName] = useState('');
         const [year, setYear] = useState('');
@@ -21,12 +19,6 @@ const MealSwipeForm = () => {
 
         const handleSubmit = async (e) => {
                 e.preventDefault()
-
-                if (!user) {
-                        setError("You must be logged in")
-                        return
-                }
-
                 
                 const time = hour+":"+minutes.padStart(2, '0')+" "+period
                 const mealswipe = {name, year, major, location, time, note, complete: false}
@@ -35,7 +27,6 @@ const MealSwipeForm = () => {
                         body: JSON.stringify(mealswipe),
                         headers: {
                                 'Content-Type': 'application/json',
-                                'Authorization': `Bearer ${user.token}`
                         }
                 })
                 const json = await response.json()
