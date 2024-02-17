@@ -2,8 +2,19 @@ const MealSwipe = require('../models/mealswipeModel')
 const mongoose = require('mongoose')
 
 const getMealSwipes = async (req, res) => {
-        const user_id = req.user._id
-        const mealswipes = await MealSwipe.find({}).sort({createdAt: -1}) // everyone to see
+
+        const { complete } = req.query;
+
+        let query = {};
+
+        if (complete && complete.toLowerCase() === 'false') {
+                query.complete = false;
+        } else if (complete && complete.toLowerCase() === 'true') {
+                query.complete = true;
+        }
+
+        // const user_id = req.user._id
+        const mealswipes = await MealSwipe.find(query).sort({createdAt: -1}) // everyone to see
         // const mealswipes = await MealSwipe.find({user_id}).sort({createdAt: -1})
         res.status(200).json(mealswipes)
 }
@@ -22,7 +33,7 @@ const getMealSwipe = async (req, res) => {
 }
 
 const createMealSwipe = async (req, res) => {
-        const {name, year, major, location, time} = req.body
+        const {name, year, major, location, time, note, complete} = req.body
         let emptyFields = []
 
         if (!name) {
@@ -52,7 +63,7 @@ const createMealSwipe = async (req, res) => {
 
         try {
                 const user_id = req.user._id
-                const mealswipe = await MealSwipe.create({name, year, major, location, time, user_id})
+                const mealswipe = await MealSwipe.create({name, year, major, location, time, note, user_id, complete})
                 res.status(200).json(mealswipe)
         } catch (error) {
                 res.status(404).json({error: error.message})
@@ -79,12 +90,12 @@ const updateMealSwipe = async (req, res) => {
         }
         const mealswipe = await MealSwipe.findOneAndUpdate({_id: id}, {
                 ...req.body
-        })
+        }, { new: true })
 
         if (!mealswipe) {
                 return res.status(404).json({error: "No such meal swipe"})
         } 
-
+        // console.log('Successfully updated meal swipe:', mealswipe);
         res.status(200).json(mealswipe)
 }
 

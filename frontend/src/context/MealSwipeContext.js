@@ -16,6 +16,12 @@ export const MealSwipesReducer = (state, action) => {
                         return {
                                 mealswipes: state.mealswipes.filter((w) => w._id !== action.payload._id) 
                         }
+                case 'UPDATE_MEALSWIPE':
+                        return {
+                                mealswipes: state.mealswipes.map((w) =>
+                                w._id === action.payload._id ? action.payload : w
+                                )
+                        }
                 default:
                         return state
         }

@@ -10,6 +10,7 @@ const MealSwipeForm = () => {
         const [major, setMajor] = useState('');
         const [location, setLocation] = useState('');
         // const [time, setTime] = useState('');
+        const [note, setNote] = useState('');
 
         const [hour, setHour] = useState('');
         const [minutes, setMinutes] = useState('');
@@ -28,7 +29,7 @@ const MealSwipeForm = () => {
 
                 
                 const time = hour+":"+minutes.padStart(2, '0')+" "+period
-                const mealswipe = {name, year, major, location, time}
+                const mealswipe = {name, year, major, location, time, note, complete: false}
                 const response = await fetch('/api/mealswipes', {
                         method: 'POST',
                         body: JSON.stringify(mealswipe),
@@ -38,7 +39,6 @@ const MealSwipeForm = () => {
                         }
                 })
                 const json = await response.json()
-                console.log(json)
                 if (!response.ok) {
                         setError(json.error)
                         setEmptyFields(json.emptyFields)
@@ -53,9 +53,11 @@ const MealSwipeForm = () => {
                         setMinutes('');
                         setPeriod('');
 
+                        setNote('');
+
                         setError(null)
                         setEmptyFields([])
-                        console.log('new workout added', json)
+                        console.log('new mealswipe added', json)
                         dispatch({type: 'CREATE_MEALSWIPE', payload: json})
                 }
         }
@@ -91,8 +93,19 @@ const MealSwipeForm = () => {
                         onChange={(e) => setMajor(e.target.value)}
                         value={major}
                         className={emptyFields.includes('major') ? 'error' : ''}
+                        list="wordList"
+                        pattern="|Computer Science|Biology|Chemistry|Electrical Engineering|Mechanical Engineering" required
                         />
+                        
+                        <datalist id="wordList">
+                                <option value="Computer Science"/>
+                                <option value="Biology"/>
+                                <option value="Chemistry"/>
+                                <option value="Electrical Engineering"/>
+                                <option value="Mechanical Engineering"/>
+                        </datalist>
 
+                        
                         <label>Location:</label>
                         <select
                         value={location}
@@ -102,6 +115,7 @@ const MealSwipeForm = () => {
                         <option value=""></option>
                         <option value="Dewick">Dewick</option>
                         <option value="Carm">Carm</option>
+                        <option value="SEC">Carm</option>
                         </select>
 
                         <label>Time:</label>
@@ -133,6 +147,14 @@ const MealSwipeForm = () => {
                                 <option value="PM">PM</option>
                                 </select>
                         </div>
+
+                        <label>Why me:</label>
+                        <input 
+                        type="text"
+                        onChange={(e) => setNote(e.target.value)}
+                        value={note}
+                        placeholder="I'm starving save me pls :("
+                        />
 
                         <button>Request Meal Swipe</button>
                         {error && <div className='error'>{error}</div>}
