@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useMealSwipesContext } from "../hooks/useMealSwipesContext";
-import { useAuthContext } from "../hooks/useAuthContext";
 
 import MealSwipeDetails from "../components/MealSwipeDetails"
 import MealSwipeForm from "../components/MealSwipeForm";

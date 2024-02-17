@@ -1,16 +1,18 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import { useAuthContext } from './hooks/useAuthContext';
 import Home from './pages/Home'
 import Navbar from './components/Navbar'
-import Login from './pages/Login';
-import Signup from './pages/Signup';
+
+import { I18nextProvider } from 'react-i18next';
+import i18n from './i18n'; // Path to your i18n.js file
+
 import History from './pages/History';
 import Temp from './pages/Temp';
 
 
 function App() {
-  const { user } = useAuthContext()
   return (
+
+    <I18nextProvider i18n={i18n}>
     <div className="App">
       <BrowserRouter>
         <Navbar/>
@@ -20,14 +22,6 @@ function App() {
             <Route 
               path="/"
               element={<Home/>}
-            />
-            <Route 
-              path="/login"
-              element={<Login/>}
-            />
-            <Route 
-              path="/signup"
-              element={<Signup/>}
             />
             <Route 
               path="/temp"
@@ -43,6 +37,8 @@ function App() {
       </BrowserRouter>
      
     </div> 
+    </I18nextProvider>
+
   );
 }
 

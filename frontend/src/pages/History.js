@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useMealSwipesContext } from "../hooks/useMealSwipesContext";
-import { useAuthContext } from "../hooks/useAuthContext";
+// import { useAuthContext } from "../hooks/useAuthContext";
 
 import MealSwipeDetails from "../components/MealSwipeDetails"
 import MealSwipeForm from "../components/MealSwipeForm";
@@ -10,15 +10,10 @@ const History = () => {
         const {mealswipes, dispatch} = useMealSwipesContext()
         // const [workouts, setWorkouts] = useState(null)
         const [isLoading, setIsLoading] = useState(true);
-        const {user} = useAuthContext()
 
         useEffect(() => {
                 const fetchMealSwipes = async () => {
-                        const response = await fetch('/api/mealswipes', {
-                                headers: {
-                                        'Authorization': `Bearer ${user.token}`
-                                }
-                        })
+                        const response = await fetch('/api/mealswipes')
                         const json = await response.json()
                         if (response.ok) {
                                 dispatch({type: 'SET_MEALSWIPES', payload: json})
@@ -27,10 +22,9 @@ const History = () => {
                         setIsLoading(false);
 
                 }
-                if (user) {
-                        fetchMealSwipes()
-                }
-        }, [dispatch, user])
+                fetchMealSwipes()
+        
+        }, [dispatch])
         const getFilteredMealSwipes = () => {
                 if (!mealswipes || mealswipes.length === 0) {
                         return [];

@@ -1,14 +1,9 @@
 import { Link } from 'react-router-dom'
-import { useLogout } from '../hooks/useLogout'
-import { useAuthContext } from '../hooks/useAuthContext'
+import { useTranslation } from 'react-i18next';
+import LanguageToggleButton from '../components/LanguageToggleButton'
 const Navbar = () => {
-        const { logout } = useLogout()
-        const { user } = useAuthContext()
+        const { t } = useTranslation();
 
-        const handleClick = () => {
-                logout()
-        }
-        
         return (
                 <header>
                         <div className="container">
@@ -16,19 +11,12 @@ const Navbar = () => {
                                         <h1>JumboShare</h1>
                                 </Link>
                                 <nav>
-                                        {user && (<div>
-                                                <span>{user.email}</span>
-                                                <Link to="/Temp">Temp</Link>
-                                                <Link to="/history">History</Link>
-                                                <button onClick={handleClick}>Log out</button>
-                                        </div>)}
-                                        {!user && (
                                         <div>
-                                                <Link to="/login">Login</Link>
-                                                <Link to="/signup">Signup</Link>
-                                        </div>)}
+                                                <Link to="/Temp">{t('apple')}</Link>
+                                                <Link to="/history">{t('banana')}</Link>
+                                                <LanguageToggleButton />
+                                        </div>
                                 </nav>
-
                         </div>
                 </header>
         )

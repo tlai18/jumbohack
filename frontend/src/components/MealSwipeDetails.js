@@ -1,26 +1,20 @@
 import { useState } from "react"
 import { useMealSwipesContext } from "../hooks/useMealSwipesContext"
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
-import { useAuthContext } from "../hooks/useAuthContext"
 
 const MealSwipeDetails = ({ mealswipe }) => {
         const { dispatch } = useMealSwipesContext()
-        const { user } = useAuthContext()
 
         const [isOpen, setIsOpen] = useState(false)
         const openModal = () => setIsOpen(true)
         const closeModal = () => setIsOpen(false)
 
         const handleDeleteClick = async () => {
-                if (!user) {
-                        return
-                }
+               
 
                 const response = await fetch('/api/mealswipes/' + mealswipe._id, {
                         method: "DELETE",
-                        headers: {
-                                'Authorization': `Bearer ${user.token}`
-                        }
+                  
                 })
                 const json = await response.json()
                 if (response.ok) {
@@ -28,15 +22,11 @@ const MealSwipeDetails = ({ mealswipe }) => {
                 }
         }
         const handleUpdateClick = async () => {
-                if (!user) {
-                    return
-                }
-            
+                
                 const response = await fetch('/api/mealswipes/' + mealswipe._id, {
                     method: "PATCH",
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${user.token}`
                     },
                     body: JSON.stringify({ complete: true })
                 })

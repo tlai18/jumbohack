@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useMealSwipesContext } from "../hooks/useMealSwipesContext";
-import { useAuthContext } from "../hooks/useAuthContext";
 
 import MealSwipeDetails from "../components/MealSwipeDetails"
 import MealSwipeForm from "../components/MealSwipeForm";
@@ -10,13 +9,10 @@ const Temp = () => {
         // const [workouts, setWorkouts] = useState(null)
         const [isLoading, setIsLoading] = useState(true);
 
-        const {user} = useAuthContext()
         useEffect(() => {
                 const fetchMealSwipes = async () => {
                         const response = await fetch('/api/mealswipes', {
-                                headers: {
-                                        'Authorization': `Bearer ${user.token}`
-                                }
+                              
                         })
                         const json = await response.json()
                         if (response.ok) {
@@ -26,10 +22,8 @@ const Temp = () => {
                         setIsLoading(false);
 
                 }
-                if (user) {
                         fetchMealSwipes()
-                }
-        }, [dispatch, user])
+        }, [dispatch])
         return (
                 <div className="home">
                         <div className="mealswipes">
