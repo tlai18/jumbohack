@@ -10,16 +10,12 @@ const Home = () => {
         const {mealswipes, dispatch} = useMealSwipesContext()
         // const [workouts, setWorkouts] = useState(null)
         const [isLoading, setIsLoading] = useState(true);
-        const {user} = useAuthContext()
+
         const [majorArray, setMajorArray] = useState([]);
 
         useEffect(() => {
                 const fetchMealSwipes = async () => {
-                        const response = await fetch('/api/mealswipes', {
-                                headers: {
-                                        'Authorization': `Bearer ${user.token}`
-                                }
-                        })
+                        const response = await fetch('/api/mealswipes')
                         const json = await response.json()
                         if (response.ok) {
                                 dispatch({type: 'SET_MEALSWIPES', payload: json})
@@ -28,10 +24,9 @@ const Home = () => {
                         setIsLoading(false);
 
                 }
-                if (user) {
-                        fetchMealSwipes()
-                }
-        }, [dispatch, user])
+                fetchMealSwipes()
+                
+        }, [dispatch])
 
 
         const handleFilterChange = (filters) => {
