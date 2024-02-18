@@ -21,7 +21,7 @@ const LawyerDetails = ({ lawyer }) => {
     return (
         <div className="lawyer-details">
             <div onClick={openModal} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '10px'}}>
-                <img src="https://placehold.co/400" style={{ borderRadius: '50%', width: '100px', height: '100px', objectFit: 'cover' }}/>
+                <img src={lawyer.imageURL} style={{ borderRadius: '50%', width: '100px', height: '100px', objectFit: 'cover' }}/>
 
                 <div style={{ display: 'flex', flexDirection: 'column', fontSize: '.8em'}}>
                     <h4 style={{ margin: 0, marginBottom: '10px', fontSize: '1.8em'}}>{lawyer.name}</h4>
