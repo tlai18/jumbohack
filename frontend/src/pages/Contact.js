@@ -198,7 +198,7 @@ function Contact() {
             </div>
           </div>
         </div>
-        <button type='submit'>Submit</button>
+        <button style={{paddingLeft: '3rem', paddingRight: '3rem', marginTop: '2rem'}} type='submit'>Submit</button>
       </form>
   );
 }

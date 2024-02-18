@@ -5,12 +5,26 @@ const getLawyers = async (req, res) => {
 
 
         try {
-                const lawyers = await Lawyer.find();
+                let langFilter = {};
+                console.error(req.query.lang); 
+                if (req.query.lang == 'Any') {
+                        langFilter = {}
+                }
+                else if (req.query.lang) {
+                        // Capitalize the first letter of the input language
+                        const capitalizedLang = req.query.lang.charAt(0).toUpperCase() + req.query.lang.slice(1).toLowerCase();
+                    
+                        langFilter = { 
+                            languageSpoken: { $in: [capitalizedLang] } 
+                        };
+                }
+
+                const lawyers = await Lawyer.find(langFilter);
                 res.status(200).json(lawyers);
-            } catch (error) {
+        } catch (error) {
                 console.error(error);
                 res.status(500).json({ error: 'An error occurred while fetching lawyers' });
-            }
+        }
 }
 
 const getLawyer = async (req, res) => {
@@ -81,7 +95,7 @@ const updateLawyer = async (req, res) => {
                 ...req.body
         }, { new: true })
 
-        if (!lawyere) {
+        if (!lawyer) {
                 return res.status(404).json({error: "No such meal swipe"})
         } 
         // console.log('Successfully updated meal swipe:', mealswipe);
