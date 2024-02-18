@@ -73,7 +73,7 @@ const Guidebook = () => {
         return (
                 <div >
                         <div id="faq-backdrop"></div>
-                        <h1 style={{display:"flex", justifyContent:"center", color:"#415441"}}>Resources</h1>
+                        <strong><h1 style={{display:"flex", justifyContent:"center", color:"#415441", marginTop: "3rem", fontSize: '2.4rem'}}>Resources</h1></strong>
                         <div class="faqs-container">
                                 <ul id="faq-list"></ul>
                         </div>
