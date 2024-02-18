@@ -19,43 +19,47 @@ function FindLawyerForm() {
   return (
     <div style={{textAlign: "center", color: "#415441"}} className="find-lawyer-form">
       <h1>Find a Lawyer</h1>
-      <form onSubmit={handleSubmit} style={{marginBottom: "10px"}}>
-        <label>
+      <form onSubmit={handleSubmit} style={{ display: "flex", 
+                                             flexDirection:"column", 
+                                             gap:"30px",
+                                             marginBottom: "10px"}}>
+        <label className="filterlabel">
           Select a language
-          <select value={language} onChange={(e) => setLanguage(e.target.value)}>
+          <select className="filterselect" value={language} onChange={(e) => setLanguage(e.target.value)}>
             <option value="English">English</option>
             <option value="Spanish">English</option>
           </select>
         </label>
-        <label>
+        <label className="filterlabel">
           Enter Your Zipcode
-          <input 
+          <input  className="filterselect"
+            id="zipbox"
             type="text" 
             value={zipcode} 
             onChange={(e) => setZipcode(e.target.value)} 
             placeholder="Zipcode"
           />
         </label>
-        <label>
+        <label className="filterlabel">
           Select Proximity
-          <select value={proximity} onChange={(e) => setProximity(e.target.value)}>
+          <select className="filterselect" value={proximity} onChange={(e) => setProximity(e.target.value)}>
             <option value="25 miles">25 miles</option>
           </select>
         </label>
-        <label>
+        <label className="filterlabel">
           Law Issue
-          <select value={lawIssue} onChange={(e) => setLawIssue(e.target.value)}>
+          <select className="filterselect" value={lawIssue} onChange={(e) => setLawIssue(e.target.value)}>
             <option value="Criminal Justice">Criminal Justice</option>
             <option value="Discrete Law">Criminal Justice</option>
           </select>
         </label>
-        <label>
+        <label className="filterlabel">
           Lawyer's Demographic
-          <select value={lawyerDemographic} onChange={(e) => setLawyerDemographic(e.target.value)}>
+          <select className="filterselect" value={lawyerDemographic} onChange={(e) => setLawyerDemographic(e.target.value)}>
             <option value="No preference">No preference</option>
           </select>
         </label>
-        <button type="submit">Find Lawyer</button>
+        <button className="filterbutton" type="submit">Find Lawyer</button>
       </form>
     </div>
   );
