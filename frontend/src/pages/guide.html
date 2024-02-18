@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Cookies & Bytes FAQs</title>
+    <link href="styles.css" rel="stylesheet" type="text/css"/>
+    <style type="text/css">
+        h1 {
+            margin-top: 100px;
+            text-align: center;
+            font-size: 40px;
+            color: #7b5946;
+        }
+        /* 
+         * styling for section before footer where users can navigate 
+         * to Contact page if their questions were not answers 
+         */
+        .link-contact {
+            display: block;
+            text-align: center;
+            background-color: #f2e9de;
+            padding: 30px;
+            font-size: 20px;
+            margin-top: 100px;
+            height: 180px;
+            background-image: url(images/faq-backdrop.jpeg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: center 20%;
+        }
+        .link-contact p {
+            color: #7b5946;
+            background-color: #efe6e0;
+            width: 300px;
+            margin: 0 auto;
+            padding: 30px;
+            border: 4px solid #A87363;
+            border-radius: 14px;
+        }
+        .link-contact a {
+            color: #efe6e0;
+            display: block;
+            background-color: #A87363;
+            box-sizing: border-box;
+            border-radius: 10px;
+            padding: 14px;
+            margin: 0 auto;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 800;
+            width: 160px;
+        }
+        .link-contact a:hover {
+            background-color: #caa296;
+            color: #7b5946;
+        }
+        .footer-content {
+            margin-top: 0px;
+        }
+
+        .faqs-container {
+            width: 70%;
+            margin: 0 auto;
+            background-color: white;
+        }
+        #faq-list {
+            list-style-type: none;
+            padding-left: 0px;
+        }
+        /* question styling */
+        #faq-list li .question {
+            font-size: 22px;
+            color: #7b5946;
+            cursor: pointer;
+            padding: 20px;
+            display: block;
+            border-bottom: 2px solid #dab9b2;
+            transition: 0.4s;
+        }
+        /* answer styling */
+        #faq-list li p {
+            padding: 0px 20px 20px 20px;
+            background-color: white;
+            display: none;
+            overflow: hidden;
+            font-size: 18px;
+            line-height: 1.7em;
+            color: #7b5946;
+        }
+        b:before {
+            content: "🍪 ";
+            line-height: inherit;
+        }
+        .inline-link {
+            color: inherit;
+            background-color: #f2e9de;
+        }
+        .inline-link:hover {
+            background-color: #A87363;
+            color: #f2e9de;
+        }
+        /* styling for hovering over and clicking on a question */
+        .active, .question:hover {
+            background-color: #dab9b2;
+        }
+        .plus-minus {
+            font-size: 18px;
+            color: #7b5946; /* color doesn't work */
+            float: right;
+            margin-left: 5px;
+        }
+        /* RESPONSIVE DESIGN */
+        @media screen and (max-width: 1200px) {
+            .faqs-container {
+                width: 80%;
+            }
+        }
+        @media screen and (max-width: 1040px) {
+            .faqs-container {
+                width: 90%;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            h1 {
+                margin-top: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <div id="faq-backdrop"></div>
+    <h1>FAQ</h1>
+    <div class="faqs-container">
+        <ul id="faq-list"></ul>
+    </div>
+
+  
+
+    <script>
+        const faqList = document.getElementById("faq-list");
+        
+        const content = [
+            {
+                q: "What is the purpose of this organization?",
+                a: "Our nonprofit is dedicated to raising funds for STEM education initiatives in underprivileged communities. We achieve this by creating and selling cookies at various events and gatherings."
+            },
+            {
+                q: "What are some of the STEM education initiatives you support?",
+                a: "We support a range of initiatives, including providing scholarships, educational resources, mentorship programs, and hands-on STEM experiences to children in need."
+            }
+        ]
+
+        let listItems = "";
+        for (const item of content) {
+            listItems += "<li><h4 class='question'>" + item.q + "<div class='plus-minus'>&#x2795;</div></h4><p>" + item.a + "</p></li>";
+        }
+        faqList.innerHTML += listItems;
+
+        let questions = document.getElementsByClassName("question");
+        for (const q of questions) {
+            q.addEventListener("click", function() {
+                this.classList.toggle("active");
+
+                // change between + and - sign
+                const plusMinus = this.getElementsByClassName("plus-minus")[0];
+                plusMinus.innerHTML = (plusMinus.innerHTML == "➕") ? "&#10134;" : "&#x2795;";
+
+                const answer = this.nextElementSibling;
+                answer.style.display = (answer.style.display === "block") ? "none" : "block";
+            });
+            // inspired by: https://sweetcode.io/how-to-build-an-faq-page-with-html-and-javascript/
+        }
+    </script>
+</body>
+</html>

@@ -81,6 +81,55 @@ option {
   margin: 20px;
 }
 
+#google_translate_element {
+  /* display:flex;
+  
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  /* height: 26px; */
+  width: 166px;
+  
+  overflow: hidden;
+  /* color: transparent;
+  font-size: 0; */
+}
+
+
+.goog-logo-link {
+  display:none !important;
+  font-size: 0;
+} 
+  
+
+
+.goog-logo-link {
+  display:none !important;
+  font-size: 0;
+}
+
+.goog-te-gadget {
+  color: transparent !important;
+  font-size: 1px;
+}
+
+#google_translate_element a {
+  display: none;
+  
+}
+.goog-te-combo {
+  padding: 10px;
+  border-radius: 10px;
+  border-color: transparent;
+  color: #415441;
+  background-color: #EBC47A;
+}
+#langbar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .filterlabel {
   display: flex;
   flex-direction: column;
@@ -120,6 +169,11 @@ navbar a {
   display: grid;
   grid-template-columns: 3fr 1fr;
   gap: 100px;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+
 }
 
 
@@ -229,7 +283,7 @@ button.filter:hover, .filter.active {
 } */
 
 form button {
-  background: var(--primary);
+  background: #415441;
   border: 0;
   color: #fff;
   padding: 10px;
@@ -412,4 +466,54 @@ nav button {
 #page-content {
         width: 80%;
         margin: 0 auto;
+}
+
+
+.faqs-container {
+  width: 70%;
+  margin: 0 auto;
+  background-color: white;
+}
+#faq-list {
+  list-style-type: none;
+  padding-left: 0px;
+}
+/* question styling */
+#faq-list li .question {
+  font-size: 22px;
+  color: #415441;
+  cursor: pointer;
+  padding: 20px;
+  display: block;
+  border-bottom: 2px solid #415441;
+  transition: 0.4s;
+}
+/* answer styling */
+#faq-list li p {
+  padding: 0px 20px 20px 20px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+  font-size: 18px;
+  line-height: 1.7em;
+  color: #415441;
+}
+
+.inline-link {
+  color: inherit;
+  background-color: #f2e9de;
+}
+.inline-link:hover {
+  background-color: #9ba79b;
+  color: #f2e9de;
+}
+/* styling for hovering over and clicking on a question */
+.active, .question:hover {
+  background-color: #c3ccc3;
+}
+.plus-minus {
+  font-size: 18px;
+  /* color: #7b5946; color doesn't work */
+  float: right;
+  margin-left: 5px;
 }
