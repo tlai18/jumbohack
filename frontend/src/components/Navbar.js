@@ -11,7 +11,7 @@ const Navbar = () => {
                         <div className="navElem"><Link className="MLL" to="/" >My Legal Lawyer</Link></div>
                         <div className="navElem"><Link to="/Temp" style={{color: "white"}}>{t('Find a lawyer')}</Link></div>
                         <div className="navElem"><Link to="/history" >{t('Legal Guidebook')}</Link></div>
-                        <div className="navElem"><Link to="/history" >{t('Contact Us')}</Link></div>
+                        <div className="navElem"><Link to="/contact" >{t('Contact Us')}</Link></div>
                         <div className="navElem"><LanguageToggleButton className="langToggle"/></div>
                         
                 </navbar>
