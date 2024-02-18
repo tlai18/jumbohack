@@ -1,8 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 
-const mealswipeRoutes = require('./routes/mealswipes')
-const userRoutes = require('./routes/users')
+const lawyerRoutes = require('./routes/lawyers')
 
 require('dotenv').config()
 
@@ -18,8 +17,7 @@ app.get('/', (req, res) => {
         res.send('Hello, world!');
 });
 
-app.use('/api/mealswipes', mealswipeRoutes)
-app.use('/api/user', userRoutes)
+app.use('/api/lawyers', lawyerRoutes)
 
 mongoose.connect(process.env.MONGO_URI)
 .then(() => {

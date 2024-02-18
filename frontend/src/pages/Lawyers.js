@@ -1,43 +1,43 @@
 import { useEffect, useState } from "react";
-import { useMealSwipesContext } from "../hooks/useMealSwipesContext";
+import { useLawyersContext } from "../hooks/useLawyersContext";
 
-import MealSwipeDetails from "../components/MealSwipeDetails"
-import MealSwipeForm from "../components/MealSwipeForm";
-const Temp = () => {
+import LawyerDetails from "../components/LawyerDetails"
+import LawyerFilter from "../components/LawyerFilter";
+const Lawyers = () => {
 
-        const {mealswipes, dispatch} = useMealSwipesContext()
+        const {lawyers, dispatch} = useLawyersContext()
         // const [workouts, setWorkouts] = useState(null)
         const [isLoading, setIsLoading] = useState(true);
 
         useEffect(() => {
-                const fetchMealSwipes = async () => {
-                        const response = await fetch('/api/mealswipes', {
+                const fetchLawyers = async () => {
+                        const response = await fetch('/api/lawyers', {
                               
                         })
                         const json = await response.json()
                         if (response.ok) {
-                                dispatch({type: 'SET_MEALSWIPES', payload: json})
+                                dispatch({type: 'SET_LAWYERS', payload: json})
                                 // setWorkouts(json)
                         }
                         setIsLoading(false);
 
                 }
-                        fetchMealSwipes()
+                        fetchLawyers()
         }, [dispatch])
         return (
                 <div className="home">
                         <div className="mealswipes">
-                                {isLoading ? (<p></p>) : mealswipes && mealswipes.length > 0 ? 
-                                        (mealswipes.map((mealswipe) => (
-                                        <MealSwipeDetails key={mealswipe._id} mealswipe={mealswipe} />
+                                {isLoading ? (<p></p>) : lawyers && lawyers.length > 0 ? 
+                                        (lawyers.map((lawyer) => (
+                                        <LawyerDetails key={lawyer._id} lawyer={lawyer} />
                                         ))
                                         ) : (
                                         <p>No meal swipe entries found.</p>
                                 )}
                         </div>
-                        <MealSwipeForm />
+                        <LawyerFilter />
                 </div>
         )
 }
 
-export default Temp;
+export default Lawyers;
