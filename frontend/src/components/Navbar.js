@@ -13,7 +13,7 @@ const Navbar = () => {
                                 <nav>
                                         <div>
                                                 <Link to="/Temp">{t('apple')}</Link>
-                                                <Link to="/history">{t('banana')}</Link>
+                                                <Link to="/contact">{t('banana')}</Link>
                                                 <LanguageToggleButton />
                                         </div>
                                 </nav>

@@ -5,7 +5,7 @@ import Navbar from './components/Navbar'
 import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n'; // Path to your i18n.js file
 
-import History from './pages/History';
+import Contact from './pages/Contact';
 import Temp from './pages/Temp';
 
 
@@ -28,8 +28,8 @@ function App() {
               element={<Temp/>}
             />
             <Route 
-              path="/history"
-              element={<History/>}
+              path="/contact"
+              element={<Contact/>}
             />
           </Routes>
 

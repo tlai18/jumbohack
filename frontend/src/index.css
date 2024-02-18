@@ -7,8 +7,8 @@
 body {
   background: #f1f1f1;
   margin: 0;
-  font-family: "Poppins";
-  zoom: 90%;
+  font-family: "Inter";
+  zoom: 100%;
 }
 
 header {
@@ -31,7 +31,7 @@ header a {
 
 .pages {
   max-width: 1400px;
-  padding: 20px;
+  padding: 3.6em;
   margin: 0 auto;
 }
 
@@ -98,16 +98,6 @@ header a {
 }
 
 
-.modal {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: #f1f1f1;
-  z-index: 1000;
-}
-
 .button-container {
   position: absolute;
   top: 50%;
@@ -137,11 +127,11 @@ button.filter:hover, .filter.active {
   color: #fff;
 }
 
-label, input {
+/* label, input {
   display: block;
-}
+} */
 
-input, select {
+/* input, select {
   padding: 20px;
   margin-top: 10px;
   margin-bottom: 20px;
@@ -149,22 +139,12 @@ input, select {
   border: 1px solid #ddd;
   border-radius: 4px;
   box-sizing: border-box;
-}
+} */
 
-option {
+/* option {
   font-size: 14px;
 
-}
-
-.time-input {
-  display: flex;
-  gap: 8px;
-}
-
-.time-input input,
-.time-input select {
-  width: 33%;
-}
+} */
 
 form button {
   background: var(--primary);
@@ -212,11 +192,4 @@ nav button {
   margin-left: 10px;
 }
 
-form.signup, form.login {
-  max-width: 400px;
-  margin: 40px auto;
-  padding: 20px;
-  background:#fff;
-  border-radius: 4px;
-}
 
