@@ -31,7 +31,7 @@ const Lawyers = () => {
                 fetchLawyers();
         }, [dispatch, language]); // Depend on language state to refetch when it changes
         return (
-                <div className="home">
+                <div className="home" id="page-content">
                         <div className="mealswipes">
                                 {isLoading ? (<p></p>) : lawyers && lawyers.length > 0 ? 
                                         (lawyers.map((lawyer) => (
