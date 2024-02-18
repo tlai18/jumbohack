@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLawyersContext } from "../hooks/useLawyersContext";
 
-import LawyerDetails from "../components/LawyerDetails"
-import LawyerFilter from "../components/LawyerFilter";
+
 const Guidebook = () => {
 
         useEffect(() => {
