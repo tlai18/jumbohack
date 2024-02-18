@@ -25,7 +25,7 @@ const Lawyers = () => {
                         fetchLawyers()
         }, [dispatch])
         return (
-                <div className="home">
+                <div className="home" id="page-content">
                         <div className="mealswipes">
                                 {isLoading ? (<p></p>) : lawyers && lawyers.length > 0 ? 
                                         (lawyers.map((lawyer) => (
