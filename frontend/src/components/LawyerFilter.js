@@ -27,7 +27,7 @@ function FindLawyerForm() {
           Select a language
           <select className="filterselect" value={language} onChange={(e) => setLanguage(e.target.value)}>
             <option value="English">English</option>
-            <option value="Spanish">English</option>
+            <option value="Spanish">Spanish</option>
           </select>
         </label>
         <label className="filterlabel">
