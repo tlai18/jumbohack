@@ -8,11 +8,11 @@ const Navbar = () => {
         return (
                 <navbar>
                                     
-                        <div className="navElem"><Link className="MLL" to="/" >My Legal Lawyer</Link></div>
+                        <div className="navElem"><Link className="MLL" to="/" >My Lingual Lawyer</Link></div>
                         <div className="navElem"><Link to="/lawyer" style={{color: "white"}}>{t('Find a lawyer')}</Link></div>
                         <div className="navElem"><Link to="/history" >{t('Legal Guidebook')}</Link></div>
                         <div className="navElem"><Link to="/contact" >{t('Contact Us')}</Link></div>
-                        <div className="navElem"><LanguageToggleButton className="langToggle"/></div>
+                        <div><LanguageToggleButton className="langToggle"/></div>
                         
                 </navbar>
         )

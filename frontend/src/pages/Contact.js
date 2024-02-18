@@ -72,15 +72,14 @@ function Contact() {
     backgroundColor: '#F4F1EC',
     justifyContent: 'center',
     display: "flex",
-    width: '90%'
-  
+    width: '90%'  
   };
 
   
   const columnStyle = {
     display: 'flex',
     flexDirection: 'column',
-    width: '70%',
+    width: '80%',
   };
 
   const col = {
@@ -99,7 +98,7 @@ function Contact() {
 
   return (
     
-      <form  onClick={() => handleSubmit} style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+      <form  onClick={() => handleSubmit} style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginTop: '40px', marginBottom: '80px'}}>
         <div style={areYouALawyer}>
           Are you a lawyer?<br/>Join My Lingual Lawyer 
         </div>

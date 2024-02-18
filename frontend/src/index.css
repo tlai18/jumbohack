@@ -15,7 +15,7 @@ navbar {
   display: flex;
   justify-content:space-between;
   align-items: stretch;
-  padding:0em 5em 0em 5em;
+  padding:0em 2em 0em 2em;
   color:white;
   background-color:#A5B2A8;
 }
@@ -28,7 +28,7 @@ navbar {
 
 .navElem {
   display: flex;
-  margin: 2em 0.2em 2em 0.2em;
+  margin: 1em 0.2em 1em 0.2em;
   padding: 1em;
   border-radius: 15px;
   align-items: center;
@@ -43,10 +43,11 @@ navbar {
   background-color: #EBC47A;
   border: none;
   cursor: pointer;
+  margin: 1em 0.2em 1em 0.2em;
+  padding: 1em;
   border-radius: 20px;
   font-family: "Poppins";
   font-size: 17px;
-  padding: 10px;
   color: #415441;
 }
 
@@ -57,15 +58,46 @@ navbar {
   border-radius: 20px;
   font-family: "Poppins";
   font-size: 17px;
-  padding: 10px;
-  margin: 0;
   color: #EBC47A; 
 }
+
+.filterselect {
+  border-radius: 13px;
+  border: 2px solid #ABABB5;
+  border-radius: 10px;
+  background: #FFFFFF;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+  padding: 10px;
+  margin: 5px;
+  /* width: 410px; */
+}
+
+option {
+  padding: 20px;
+  margin: 20px;
+}
+
+.filterlabel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Frame 427319478 */
+
+/* Auto layout */
+
 
 navbar .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 10px 20px;
+  padding: 10px 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -78,11 +110,10 @@ navbar a {
   text-decoration: none;
 }
 
-.pages {
+/* .pages {
   max-width: 1400px;
-  padding: 3.6em;
-  margin: 0 auto;
-}
+  /* padding: 3.6em;
+  margin: 0 auto;  */
 
 .home {
   display: grid;
@@ -258,6 +289,43 @@ nav button {
     z-index: 1000; 
 }
 
+.hero-section {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      
+      }
+      
+      .hero-section img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .hero-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 1.5em;
+        text-align: center;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        z-index: 1;
+      }
+
+      .hero-text p {
+        font-size: 1em;
+      }
+
+
+      .home-content {
+        background-color: #F4F1EC;
+        color: #415441;
+        text-align: center;
+        align-items: center;
+      }
+
 /* // For the modal content to appear centered and above the overlay */
 .modal-content {
     background: white;
@@ -319,4 +387,23 @@ nav button {
     bottom: 0;
     background: rgba(0, 0, 0, 0.5);
     z-index: -1;
+}
+
+.filterbutton {
+    /* Lawyer Button */
+  height: 50px;
+
+
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  /* Rectangle 31 */
+
+  
+
+  background: #415441;
+  border-radius: 10px;
+
+
 }
