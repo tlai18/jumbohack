@@ -1,72 +1,65 @@
-import { useEffect, useState } from "react";
-import { useMealSwipesContext } from "../hooks/useMealSwipesContext";
+import React, { useState } from 'react';
+import Hero from '../images/hero-image.png';
+import AboutUs from '../images/about-us.png';
+import Values from '../images/our-values.png';
+import Reviews from '../images/reviews.png';
+import Join from '../images/join.png';
 
-import MealSwipeDetails from "../components/MealSwipeDetails"
-import MealSwipeForm from "../components/MealSwipeForm";
-import MealSwipeFilter from "../components/MealSwipeFilter";
 const Home = () => {
-
-        const {mealswipes, dispatch} = useMealSwipesContext()
-        // const [workouts, setWorkouts] = useState(null)
-        const [isLoading, setIsLoading] = useState(true);
-
-        const [majorArray, setMajorArray] = useState([]);
-
-        useEffect(() => {
-                const fetchMealSwipes = async () => {
-                        const response = await fetch('/api/mealswipes')
-                        const json = await response.json()
-                        if (response.ok) {
-                                dispatch({type: 'SET_MEALSWIPES', payload: json})
-                                // setWorkouts(json)
-                        }
-                        setIsLoading(false);
-
-                }
-                fetchMealSwipes()
-                
-        }, [dispatch])
-
-
-        const handleFilterChange = (filters) => {
-                setMajorArray(filters);
-        };
-    
-        const getFilteredMealSwipes = () => {
-          if (!mealswipes || mealswipes.length === 0) {
-            return [];
-          }
-          
-          return mealswipes.filter(mealswipe => {
-            const majorMatches = majorArray.length === 0 || 
-              majorArray.some(filter => mealswipe.major.toLowerCase() === filter.toLowerCase());
-            const isNotComplete = mealswipe.complete === false;
-        
-            return majorMatches && isNotComplete;
-          });
-        }
-        
-        const filteredMealSwipes = getFilteredMealSwipes();
         
         return (
-          <div className="home">
-            <div className="mealswipes">
-              <MealSwipeFilter handleFilterChange={handleFilterChange} />
+                <div>
+                <header className="hero-section">
+                  <img src={Hero} alt="Hero Image" />
+                  <div className="hero-text">
+                        <h1>
+                        Welcome to <br/> My Lingual Lawyer
+                        </h1>
         
-              {isLoading ? (
-                <p>Loading...</p>
-              ) : (
-                filteredMealSwipes.length > 0 ? (
-                  filteredMealSwipes.map(mealswipe => 
-                    <MealSwipeDetails key={mealswipe._id} mealswipe={mealswipe} />
-                  )
-                ) : (
-                  <p>No meal swipe Requests found.</p>
-                )
-              )}
-            </div>
-            <MealSwipeForm />
-          </div>
+                        <p>Say goodbye to language barriers and hello to expert legal assistance at your convenience, personalized just for you.</p>    
+                                
+                </div>
+                </header>
+          
+                <br /><br /><br />
+                <div class="home-content">
+
+                
+                <div className="language-selector">
+                <h1>Select your language</h1>
+                <p>Find accessible lawyers fluent in your native language.</p>
+                </div>
+                <button> BUTTON</button>
+                <br />
+                <button> FIND LAWYERS BUTTON</button>
+                <br /><br /><br /><br />
+                <hr></hr>
+                <br /><br /><br />
+                <img src={AboutUs} alt="About Us Image" />
+                <br /><br /><br /><br />
+                <hr></hr>
+                <br /><br /><br />
+                <img src={Values} alt="Values Image" style={{ width: '85%' }}/>
+                <br /><br /><br /><br />
+
+                <br /><br /><br />
+                <img src={Reviews} alt="Reviews and joining Image"/>
+                <div className="hero-section">
+
+                </div>
+                <div className="hero-container" style={{ position: 'relative', color: 'white' }}>
+                <img src={Join} alt="Hero Image" style={{ width: '100%', height: 'auto', marginTop: '-2%' }} />
+                <div className="hero-text2" style={{ position: 'absolute', top: '4em', left: '2em', textAlign: 'left', padding: '20px' }}>
+                        <h1>
+                        Join Our Network: Expand Your Reach <br /> And Help Immigrants In Need!
+                        </h1>
+                        <p>Sign up as a lawyer below.</p>
+                        <button className="langToggle">Join Now</button>
+                </div>
+                </div>
+          
+                </div>
+              </div>
         );
               
 }
