@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useLawyersContext } from "../hooks/useLawyersContext";
 
 import LawyerDetails from "../components/LawyerDetails"
-import LawyerForm from "../components/LawyerForm";
+import LawyerFilter from "../components/LawyerFilter";
 const Lawyers = () => {
 
         const {lawyers, dispatch} = useLawyersContext()
@@ -35,7 +35,7 @@ const Lawyers = () => {
                                         <p>No meal swipe entries found.</p>
                                 )}
                         </div>
-                        <LawyerForm />
+                        <LawyerFilter />
                 </div>
         )
 }

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useLawyersContext } from "../hooks/useLawyersContext";
-import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 
 const LawyerDetails = ({ lawyer }) => {
     const { dispatch } = useLawyersContext();
