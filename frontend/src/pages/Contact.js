@@ -99,8 +99,8 @@ function Contact() {
   return (
     
       <form  onClick={() => handleSubmit} style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginTop: '40px', marginBottom: '80px'}}>
-        <div style={areYouALawyer}>
-          Are you a lawyer?<br/>Join My Lingual Lawyer 
+        <div style={areYouALawyer}><strong>
+          Are you a lawyer?<br/>Join My Lingual Lawyer </strong>
         </div>
 
 
