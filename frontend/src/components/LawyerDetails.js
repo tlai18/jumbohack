@@ -45,7 +45,7 @@ const LawyerDetails = ({ lawyer }) => {
                     <p><strong>Biography: </strong>{lawyer.shortBiography}</p>
                     <div className="modal-actions">
                         {/* <button onClick={handleDeleteClick}>Delete</button> */}
-                        <button onClick={closeModal}>close</button>
+                        <button style={{color: "white", paddingLeft: "3rem", paddingRight: "3rem"}} className="filterbutton" onClick={closeModal}>Close</button>
                     </div>
                 </div>
             </div>
