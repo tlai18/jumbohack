@@ -1,6 +1,23 @@
 import { useState } from "react"
 import { useLawyersContext } from "../hooks/useLawyersContext"
 const LawyerForm = () => {
+        const [activeFilters, setActiveFilters] = useState([]);
+
+        const handleFilter = (filter) => {
+                let updatedFilters = [...activeFilters];
+                
+                if (updatedFilters.includes(filter)) {
+                // Filter already exists, remove it from the activeFilters array
+                updatedFilters = updatedFilters.filter(f => f !== filter);
+                } else {
+                // Filter does not exist, add it to the activeFilters array
+                updatedFilters.push(filter);
+                }
+                setActiveFilters(updatedFilters);
+                // handleFilterChange(updatedFilters); // Call the handleFilterChange function in the parent component with the updatedFilters array
+                };
+        /***********************************************/
+
         const { dispatch } = useLawyersContext()
 
         const [lang, setLang] = useState('');
@@ -19,7 +36,7 @@ const LawyerForm = () => {
 
         const handleSubmit = async (e) => {
                 e.preventDefault()
-                
+                console.log("are yo uhere???")
                 const time = hour+":"+minutes.padStart(2, '0')+" "+period
                 const lawyer = {zip, lang, major, location, time, note, complete: false}
                 const response = await fetch('/api/lawyers', {
@@ -35,26 +52,26 @@ const LawyerForm = () => {
                         setEmptyFields(json.emptyFields)
                 }
                 if (response.ok) {
-                        setZip('');
-                        setLang('');
-                        setMajor('');
-                        setLocation('');
+                //         setZip('');
+                //         setLang('');
+                //         setMajor('');
+                //         setLocation('');
 
-                        setHour('');
-                        setMinutes('');
-                        setPeriod('');
+                //         setHour('');
+                //         setMinutes('');
+                //         setPeriod('');
 
-                        setNote('');
+                //         setNote('');
 
-                        setError(null)
-                        setEmptyFields([])
+                //         setError(null)
+                //         setEmptyFields([])
                         console.log('new mealswipe added', json)
-                        dispatch({type: 'CREATE_MEALSWIPE', payload: json})
+                //         dispatch({type: 'CREATE_MEALSWIPE', payload: json})
                 }
         }
 
         return (
-                <form className="create" onSubmit={handleSubmit}>
+                <form className="create" onSubmit={handleSubmit()}>
                         {/* <h3>Add a New Workout</h3> */}
                         <h3>Search for a Lawyer</h3>
                         
@@ -70,7 +87,7 @@ const LawyerForm = () => {
                         <option value="Spanish">Spanish</option>
                         </select>
 
-                        <label>Area of law:</label>
+                        {/* <label>Area of law:</label>
                         <select
                         value={zip}
                         onChange={(e) => setZip(e.target.value)}
@@ -86,7 +103,7 @@ const LawyerForm = () => {
                         <input
                         placeholder="6 digit zipcode"
                         pattern="[0-9]{5}"
-                        ></input>
+                        ></input> */}
 
                         <button>Search for a lawyer</button>
                         {error && <div className='error'>{error}</div>}
