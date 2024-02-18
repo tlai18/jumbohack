@@ -11,7 +11,7 @@ const { t, i18n } = useTranslation();
   };
 
   return (
-    <button onClick={toggleLanguage}>
+    <button className="langToggle" onClick={toggleLanguage}>
       {i18n.language === 'en' ? 'Switch to Spanish' : 'Switch to English'}
     </button>
   );
