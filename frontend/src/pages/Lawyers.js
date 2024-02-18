@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLawyersContext } from "../hooks/useLawyersContext";
+import Join from '../images/join.png';
 
 import LawyerDetails from "../components/LawyerDetails"
 const Lawyers = () => {
@@ -31,7 +32,8 @@ const Lawyers = () => {
                 fetchLawyers();
         }, [dispatch, language]); // Depend on language state to refetch when it changes
         return (
-                <div className="home" id="page-content">
+                <>
+                <div className="home">
                         <div className="mealswipes">
                                 {isLoading ? (<p></p>) : lawyers && lawyers.length > 0 ? 
                                         (lawyers.map((lawyer) => (
@@ -89,8 +91,22 @@ const Lawyers = () => {
         </label>
         <button className="filterbutton" type="submit">Find Lawyer</button>
       </form>
-    </div>
+        </div>
+        </div>
+        <div className="hero-container" style={{ position: 'relative', color: 'white' }}>
+                <img src={Join} alt="Hero Image" style={{ width: '100%', height: 'auto', marginTop: '-2%', marginBottom: '-2%' }} />
+                <div className="hero-text2" style={{ position: 'absolute', top: '4em', left: '2em', textAlign: 'left', padding: '20px' }}>
+                        <h1>
+                        Join Our Network: Expand Your Reach <br /> And Help Immigrants In Need!
+                        </h1>
+                        <p>Sign up as a lawyer below.</p>
+                        <button className="langToggle">Join Now</button>
                 </div>
+                </div>
+
+        </>
+
+
         )
 }
 

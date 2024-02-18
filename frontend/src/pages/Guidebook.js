@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLawyersContext } from "../hooks/useLawyersContext";
+import Join from '../images/join.png';
 
 
 const Guidebook = () => {
@@ -77,6 +77,18 @@ const Guidebook = () => {
                         <div class="faqs-container">
                                 <ul id="faq-list"></ul>
                         </div>
+                        <div className="hero-container" style={{ position: 'relative', color: 'white', marginTop: '8rem'}}>
+                <img src={Join} alt="Hero Image" style={{ width: '100%', height: 'auto', marginTop: '-2%', marginBottom: '-2%' }} />
+                <div className="hero-text2" style={{ position: 'absolute', top: '4em', left: '2em', textAlign: 'left', padding: '20px' }}>
+                        <h1>
+                        Join Our Network: Expand Your Reach <br /> And Help Immigrants In Need!
+                        </h1>
+                        <p>Sign up as a lawyer below.</p>
+                        <button className="langToggle">Join Now</button>
+                </div>
+                </div>
+                        
+                
 
                 </div>
         )

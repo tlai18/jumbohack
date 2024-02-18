@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react";
 import { useLawyersContext } from "../hooks/useLawyersContext";
-// import { useAuthContext } from "../hooks/useAuthContext";
+import Join from '../images/join.png';
 
 
 function Contact() {
@@ -199,6 +199,16 @@ function Contact() {
           </div>
         </div>
         <button style={{paddingLeft: '3rem', paddingRight: '3rem', marginTop: '2rem'}} type='submit'>Submit</button>
+        <div className="hero-container" style={{ position: 'relative', color: 'white', marginTop: '8rem'}}>
+                <img src={Join} alt="Hero Image" style={{ width: '100%', height: 'auto', marginTop: '-2%', marginBottom: '-2%' }} />
+                <div className="hero-text2" style={{ position: 'absolute', top: '4em', left: '2em', textAlign: 'left', padding: '20px' }}>
+                        <h1>
+                        Join Our Network: Expand Your Reach <br /> And Help Immigrants In Need!
+                        </h1>
+                        <p>Sign up as a lawyer below.</p>
+                        <button className="langToggle">Join Now</button>
+                </div>
+          </div>
       </form>
   );
 }
