@@ -2,17 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { MealSwipesContextProvider } from './context/MealSwipeContext';
-import { AuthContextProvider } from './context/AuthContext';
+import { LawyersContextProvider } from './context/LawyersContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AuthContextProvider>
-      <MealSwipesContextProvider>
+      <LawyersContextProvider>
         <App />
-      </MealSwipesContextProvider>
-    </AuthContextProvider>
+      </LawyersContextProvider>
   </React.StrictMode>
 );
 

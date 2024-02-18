@@ -6,7 +6,7 @@ import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n'; // Path to your i18n.js file
 
 import Contact from './pages/Contact';
-import Temp from './pages/Temp';
+import Temp from './pages/Lawyers';
 
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
               element={<Home/>}
             />
             <Route 
-              path="/temp"
+              path="/lawyer"
               element={<Temp/>}
             />
             <Route 

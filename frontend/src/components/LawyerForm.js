@@ -1,7 +1,7 @@
 import { useState } from "react"
-import { useMealSwipesContext } from "../hooks/useMealSwipesContext"
-const MealSwipeForm = () => {
-        const { dispatch } = useMealSwipesContext()
+import { useLawyersContext } from "../hooks/useLawyersContext"
+const LawyerForm = () => {
+        const { dispatch } = useLawyersContext()
 
         const [lang, setLang] = useState('');
         const [zip, setZip] = useState('');
@@ -21,10 +21,10 @@ const MealSwipeForm = () => {
                 e.preventDefault()
                 
                 const time = hour+":"+minutes.padStart(2, '0')+" "+period
-                const mealswipe = {zip, lang, major, location, time, note, complete: false}
-                const response = await fetch('/api/mealswipes', {
+                const lawyer = {zip, lang, major, location, time, note, complete: false}
+                const response = await fetch('/api/lawyers', {
                         method: 'POST',
-                        body: JSON.stringify(mealswipe),
+                        body: JSON.stringify(lawyer),
                         headers: {
                                 'Content-Type': 'application/json',
                         }
@@ -95,4 +95,4 @@ const MealSwipeForm = () => {
         )
 }
 
-export default MealSwipeForm
+export default LawyerForm
