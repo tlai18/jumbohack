@@ -4,6 +4,7 @@ import AboutUs from '../images/about-us.png';
 import Values from '../images/our-values.png';
 import Reviews from '../images/reviews.png';
 import Join from '../images/join.png';
+import { Link } from 'react-router-dom'
 
 const Home = () => {
         
@@ -26,12 +27,12 @@ const Home = () => {
 
                 
                 <div className="language-selector">
-                <h1>Select your language</h1>
-                <p>Find accessible lawyers fluent in your native language.</p>
+                {/* <h1>Select your language</h1> */}
+                <h1>Find accessible lawyers fluent in your native language.</h1>
                 </div>
-                <button> BUTTON</button>
+                <Link to="/lawyer" ><button id="findlawyer"> Find a Lawyer</button></Link>
                 <br />
-                <button> FIND LAWYERS BUTTON</button>
+                
                 <br /><br /><br /><br />
                 <hr></hr>
                 <br /><br /><br />
@@ -137,7 +138,7 @@ const Home = () => {
                         Join Our Network: Expand Your Reach <br /> And Help Immigrants In Need!
                         </h1>
                         <p>Sign up as a lawyer below.</p>
-                        <button className="langToggle">Join Now</button>
+                        <Link to="/contact"><button className="langToggle">Join Now</button></Link>
                 </div>
                 </div>
           
