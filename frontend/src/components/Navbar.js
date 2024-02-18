@@ -6,7 +6,7 @@ const Navbar = () => {
         const { t } = useTranslation();
 
         return (
-                <navbar>
+                <navbar style={{ boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)' }}>
                                     
                         <div className="navElem"><Link className="MLL" to="/" >My Lingual Lawyer</Link></div>
                         <div className="navElem"><Link to="/lawyer" style={{color: "white"}}>{t('Find a lawyer')}</Link></div>
