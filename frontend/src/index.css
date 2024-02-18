@@ -80,6 +80,55 @@ option {
   margin: 20px;
 }
 
+#google_translate_element {
+  /* display:flex;
+  
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  /* height: 26px; */
+  width: 166px;
+  
+  overflow: hidden;
+  /* color: transparent;
+  font-size: 0; */
+}
+
+
+.goog-logo-link {
+  display:none !important;
+  font-size: 0;
+} 
+  
+
+
+.goog-logo-link {
+  display:none !important;
+  font-size: 0;
+}
+
+.goog-te-gadget {
+  color: transparent !important;
+  font-size: 1px;
+}
+
+#google_translate_element a {
+  display: none;
+  
+}
+.goog-te-combo {
+  padding: 10px;
+  border-radius: 10px;
+  border-color: transparent;
+  color: #415441;
+  background-color: #EBC47A;
+}
+#langbar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .filterlabel {
   display: flex;
   flex-direction: column;
