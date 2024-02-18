@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLawyersContext } from "../hooks/useLawyersContext"
 
 const MealSwipeFilter = ({ handleFilterChange }) => {
   const [activeFilters, setActiveFilters] = useState([]);
