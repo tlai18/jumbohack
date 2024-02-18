@@ -47,15 +47,14 @@ function Contact() {
     backgroundColor: '#F4F1EC',
     justifyContent: 'center',
     display: "flex",
-    width: '90%'
-  
+    width: '90%'  
   };
 
   
   const columnStyle = {
     display: 'flex',
     flexDirection: 'column',
-    width: '70%',
+    width: '80%',
   };
 
   const col = {
@@ -134,15 +133,21 @@ function Contact() {
           {/* Right column fields */}
           <div style={col}>
 
-            <label style={labelStyle}>
-            Languages Spoken
-            </label>
-            <select value={languages} onChange={e => setLanguages(e.target.value)} style={inputSelectStyle}>
-              <option value="spanish">Spanish</option>
-              <option value="english">English</option>
-              <option value="french">French</option>
-            </select>
-          </div>
+        <label style={labelStyle}>
+        Languages Spoken
+        </label>
+        
+        <select
+        value={languages}
+        onChange={e => setLanguages(Array.from(e.target.selectedOptions, option => option.value))}
+        style={inputSelectStyle}
+        multiple // Add multiple attribute for selecting multiple options
+        >
+        <option value="spanish">Spanish</option>
+        <option value="english">English</option>
+        <option value="french">French</option>
+        </select>
+        </div>
 
           <div style={col}>
             <label style={labelStyle}>
