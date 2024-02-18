@@ -11,21 +11,70 @@ body {
   zoom: 100%;
 }
 
-header {
-  background-color: #fff;
+navbar {
+  display: flex;
+  justify-content:space-between;
+  align-items: stretch;
+  padding:0em 5em 0em 5em;
+  color:white;
+  background-color:#A5B2A8;
 }
 
-header .container {
+
+.MLL {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.navElem {
+  display: flex;
+  margin: 2em 0.2em 2em 0.2em;
+  padding: 1em;
+  border-radius: 15px;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.navElem:hover {
+  background-color: #4c5c57b5;
+}
+
+.langToggle {
+  background-color: #EBC47A;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  font-family: "Poppins";
+  font-size: 17px;
+  padding: 10px;
+  color: #415441;
+}
+
+.langToggle:hover {
+  background-color: #415441;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  font-family: "Poppins";
+  font-size: 17px;
+  padding: 10px;
+  margin: 0;
+  color: #EBC47A; 
+}
+
+navbar .container {
   max-width: 1400px;
   margin: 0 auto;
   padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: #333;
 }
 
-header a {
-  color: #333;
+navbar a {
+  color: #ffffff;
+  font-size: 20px;
   text-decoration: none;
 }
 
@@ -40,7 +89,6 @@ header a {
   grid-template-columns: 3fr 1fr;
   gap: 100px;
 }
-
 
 
 .mealswipe-details {
@@ -174,6 +222,7 @@ input.error, select.error
 nav {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 nav a {
