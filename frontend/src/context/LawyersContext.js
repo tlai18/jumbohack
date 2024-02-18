@@ -24,7 +24,7 @@ export const LawyersReducer = (state, action) => {
 
 export const LawyersContextProvider = ({ children })=> {
         const [state, dispatch] = useReducer(LawyersReducer, {
-                lawyers: null 
+                lawyers: []
         })
 
         return (

@@ -5,23 +5,22 @@ import Join from '../images/join.png';
 
 
 function Contact() {
-    const [name, setName] = useState('');
-    const [pronouns, setPronouns] = useState('');
-    const [lawFirm, setLawFirm] = useState('');
-    const [address, setAddress] = useState('');
-    const [zipCode, setZipCode] = useState('');
-    const [website, setWebsite] = useState('');
-    const [languages, setLanguages] = useState('');
-    const [demographic, setDemographic] = useState('');
-    const [fieldsOfLaw, setFieldsOfLaw] = useState('');
-    const [shortBiography, setShortBiography] = useState('');  
+    const [name, setName] = useState('n/a');
+    const [pronouns, setPronouns] = useState('n/a');
+    const [lawFirm, setLawFirm] = useState('n/a');
+    const [address, setAddress] = useState('n/a');
+    const [zipCode, setZipCode] = useState('n/a');
+    const [website, setWebsite] = useState('n/a');
+    const [languages, setLanguages] = useState('[]');
+    const [demographic, setDemographic] = useState('n/a');
+    const [fieldsOfLaw, setFieldsOfLaw] = useState('[]');
+    const [shortBiography, setShortBiography] = useState('n/a');  
 
     const {lawyers, dispatch} = useLawyersContext()
 
     const [isLoading, setIsLoading] = useState(true);
 
     const handleSubmit = async (e) => {
-      e.preventDefault()
       const lawyer = {name, pronouns, lawFirm, address, zipCode, website, languages, demographic, fieldsOfLaw, shortBiography}
       const response = await fetch('/api/lawyers', {
               method: 'POST',
@@ -69,7 +68,6 @@ function Contact() {
   const formContainerStyle = {
     // gridGap: '20px',
     maxWidth: '1440px',
-    backgroundColor: '#F4F1EC',
     justifyContent: 'center',
     display: "flex",
     width: '90%'  
@@ -98,7 +96,7 @@ function Contact() {
 
   return (
     
-      <form  onClick={() => handleSubmit} style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginTop: '40px', marginBottom: '80px'}}>
+      <form onSubmit={(e) => handleSubmit(e)} style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginTop: '40px', marginBottom: '80px'}}>
         <div style={areYouALawyer}><strong>
           Are you a lawyer?<br/>Join My Lingual Lawyer </strong>
         </div>

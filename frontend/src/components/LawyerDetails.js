@@ -8,15 +8,15 @@ const LawyerDetails = ({ lawyer }) => {
     const openModal = () => setIsOpen(true);
     const closeModal = () => setIsOpen(false);
 
-    const handleDeleteClick = async () => {
-        const response = await fetch('/api/lawyers/' + lawyer._id, {
-            method: "DELETE",
-        });
-        const json = await response.json();
-        if (response.ok) {
-            dispatch({ type: "DELETE_LAWYER", payload: json });
-        }
-    };
+    // const handleDeleteClick = async () => {
+    //     const response = await fetch('/api/lawyers/' + lawyer._id, {
+    //         method: "DELETE",
+    //     });
+    //     const json = await response.json();
+    //     if (response.ok) {
+    //         dispatch({ type: "DELETE_LAWYER", payload: json });
+    //     }
+    // };
 
     return (
         <div className="lawyer-details">
