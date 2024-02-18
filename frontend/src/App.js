@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Home from './pages/Home'
 import Navbar from './components/Navbar'
+import Guidebook from './pages/Guidebook'
 
 import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n'; // Path to your i18n.js file
@@ -30,6 +31,10 @@ function App() {
             <Route 
               path="/contact"
               element={<Contact/>}
+            />
+            <Route 
+              path="/guidebook"
+              element={<Guidebook/>}
             />
           </Routes>
 
