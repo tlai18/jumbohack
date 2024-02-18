@@ -38,6 +38,11 @@ const lawyerSchema = new Schema({
     },
     shortBiography: {
         type: String
+    },
+
+    imageURL: {
+        type: String,
+        default: 'https://placehold.co/400' 
     }
 }, { timestamps: true });
 

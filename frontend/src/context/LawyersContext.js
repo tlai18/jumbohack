@@ -16,12 +16,6 @@ export const LawyersReducer = (state, action) => {
                         return {
                                 lawyers: state.lawyers.filter((w) => w._id !== action.payload._id) 
                         }
-                case 'UPDATE_LAWYER':
-                        return {
-                                lawyers: state.lawyers.map((w) =>
-                                w._id === action.payload._id ? action.payload : w
-                                )
-                        }
                 default:
                         return state
         }
@@ -30,7 +24,7 @@ export const LawyersReducer = (state, action) => {
 
 export const LawyersContextProvider = ({ children })=> {
         const [state, dispatch] = useReducer(LawyersReducer, {
-                lawyer: null 
+                lawyers: null 
         })
 
         return (

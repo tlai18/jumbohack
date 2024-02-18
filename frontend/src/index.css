@@ -197,7 +197,7 @@ button.filter:hover, .filter.active {
 } */
 
 form button {
-  background: var(--primary);
+  background: #415441;
   border: 0;
   color: #fff;
   padding: 10px;
