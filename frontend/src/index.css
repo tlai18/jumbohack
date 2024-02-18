@@ -62,6 +62,39 @@ navbar {
   color: #EBC47A; 
 }
 
+.filterselect {
+  border-radius: 13px;
+  border: 2px solid #ABABB5;
+  border-radius: 10px;
+  background: #FFFFFF;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+  padding: 10px;
+  margin: 5px;
+  /* width: 410px; */
+}
+
+option {
+  padding: 20px;
+  margin: 20px;
+}
+
+.filterlabel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Frame 427319478 */
+
+/* Auto layout */
+
+
 navbar .container {
   max-width: 1400px;
   margin: 0 auto;
@@ -319,4 +352,23 @@ nav button {
     bottom: 0;
     background: rgba(0, 0, 0, 0.5);
     z-index: -1;
+}
+
+.filterbutton {
+    /* Lawyer Button */
+  height: 50px;
+
+
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  /* Rectangle 31 */
+
+  
+
+  background: #415441;
+  border-radius: 10px;
+
+
 }
