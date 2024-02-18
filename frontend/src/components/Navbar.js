@@ -28,9 +28,10 @@ const Navbar = () => {
                         
                         <div className="navElem"><Link className="MLL" to="/" >My Lingual Lawyer</Link></div>
                         <div className="navElem"><Link to="/lawyer" style={{color: "white"}}>{t('Find a lawyer')}</Link></div>
-                        <div className="navElem"><Link to="/history" >{t('Legal Guidebook')}</Link></div>
+                        {/* <div className="navElem"><a href="../guide.html" >{t('Legal Guidebook')}</a></div> */}
+                        <div className="navElem"><Link to="/guidebook" >{t('Resources')}</Link></div>
                         <div className="navElem"><Link to="/contact" >{t('Contact Us')}</Link></div>
-                        <div className="navElem" id="langbar">Select a language: <div id="google_translate_element"></div> </div>
+                        <div className="navElem" id="langbar"><div id="google_translate_element"></div> </div>
                         {/* <div><LanguageToggleButton className="langToggle"/></div> */}
 
                 </navbar>

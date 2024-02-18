@@ -457,3 +457,54 @@ nav button {
 
 
 }
+
+
+
+.faqs-container {
+  width: 70%;
+  margin: 0 auto;
+  background-color: white;
+}
+#faq-list {
+  list-style-type: none;
+  padding-left: 0px;
+}
+/* question styling */
+#faq-list li .question {
+  font-size: 22px;
+  color: #415441;
+  cursor: pointer;
+  padding: 20px;
+  display: block;
+  border-bottom: 2px solid #415441;
+  transition: 0.4s;
+}
+/* answer styling */
+#faq-list li p {
+  padding: 0px 20px 20px 20px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+  font-size: 18px;
+  line-height: 1.7em;
+  color: #415441;
+}
+
+.inline-link {
+  color: inherit;
+  background-color: #f2e9de;
+}
+.inline-link:hover {
+  background-color: #9ba79b;
+  color: #f2e9de;
+}
+/* styling for hovering over and clicking on a question */
+.active, .question:hover {
+  background-color: #c3ccc3;
+}
+.plus-minus {
+  font-size: 18px;
+  /* color: #7b5946; color doesn't work */
+  float: right;
+  margin-left: 5px;
+}
