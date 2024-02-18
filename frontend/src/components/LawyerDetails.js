@@ -34,7 +34,7 @@ const LawyerDetails = ({ lawyer }) => {
             {isOpen && (
                 <div className="modal-overlay" onClick={closeModal}>
                 <div className="modal-content" onClick={e => e.stopPropagation()}>
-                    <img src="https://placehold.co/400" style={{ borderRadius: '50%', width: '100px', height: '100px', objectFit: 'cover', marginBottom: '20px' }} alt="Lawyer" />
+                    <img src={lawyer.imageURL} style={{ borderRadius: '50%', width: '100px', height: '100px', objectFit: 'cover', marginBottom: '20px' }} alt="Lawyer" />
                     <p><strong>Name: </strong>{lawyer.name}</p>
                     <p><strong>Pronouns: </strong>{lawyer.pronouns}</p>
                     <p><strong>Law Firm: </strong>{lawyer.lawFirm}</p>

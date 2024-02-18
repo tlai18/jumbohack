@@ -119,6 +119,7 @@ navbar a {
   display: grid;
   grid-template-columns: 3fr 1fr;
   gap: 100px;
+  width: 80%;
 }
 
 

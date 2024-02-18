@@ -6,7 +6,6 @@ import LawyerFilter from "../components/LawyerFilter";
 const Lawyers = () => {
 
         const {lawyers, dispatch} = useLawyersContext()
-        // const [workouts, setWorkouts] = useState(null)
         const [isLoading, setIsLoading] = useState(true);
 
         useEffect(() => {
@@ -17,7 +16,6 @@ const Lawyers = () => {
                         const json = await response.json()
                         if (response.ok) {
                                 dispatch({type: 'SET_LAWYERS', payload: json})
-                                // setWorkouts(json)
                         }
                         setIsLoading(false);
 

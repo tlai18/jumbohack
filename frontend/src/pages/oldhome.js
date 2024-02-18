@@ -7,7 +7,6 @@ import MealSwipeFilter from "../components/MealSwipeFilter";
 const Home = () => {
 
         const {mealswipes, dispatch} = useMealSwipesContext()
-        // const [workouts, setWorkouts] = useState(null)
         const [isLoading, setIsLoading] = useState(true);
 
         const [majorArray, setMajorArray] = useState([]);
@@ -18,7 +17,6 @@ const Home = () => {
                         const json = await response.json()
                         if (response.ok) {
                                 dispatch({type: 'SET_MEALSWIPES', payload: json})
-                                // setWorkouts(json)
                         }
                         setIsLoading(false);
 
