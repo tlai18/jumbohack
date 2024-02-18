@@ -120,6 +120,10 @@ navbar a {
   grid-template-columns: 3fr 1fr;
   gap: 100px;
   width: 80%;
+  margin: 0 auto;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+
 }
 
 
