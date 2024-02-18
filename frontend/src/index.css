@@ -12,7 +12,40 @@ body {
 }
 
 header {
-  background-color: #fff;
+  /* background-color: #fff; */
+  display: flex;
+  justify-content:space-between;
+  align-items: stretch;
+  padding:0em 10em 0em 10em;
+  color:white;
+  background-color:#A5B2A8;
+}
+
+
+.MLL {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.navElem {
+  display: flex;
+  padding: 2em 0.2em 2em 0.2em;
+  align-items: center;
+  transition: 0.3s;
+}
+.navElem:hover {
+  background-color: #4c5c57b5;
+}
+
+.langToggle {
+  background-color: #EBC47A;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  font-family: "Poppins";
+  font-size: 17px;
+  padding: 10px;
+  color: #415441;
 }
 
 header .container {
@@ -22,10 +55,12 @@ header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: #333;
 }
 
 header a {
-  color: #333;
+  color: #ffffff;
+  font-size: 20px;
   text-decoration: none;
 }
 
@@ -194,6 +229,7 @@ input.error, select.error
 nav {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 nav a {
